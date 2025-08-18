@@ -6,7 +6,7 @@ export const setFacility = (facilityId) => {
 };
 
 export const setGovernor = (governorId) => {
-  state.selectedGovernor = governorIdId;
+  state.selectedGovernor = governorId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
