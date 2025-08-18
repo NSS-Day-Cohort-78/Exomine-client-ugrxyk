@@ -1,8 +1,7 @@
-
-const container = document.querySelector("#container")
+const container = document.querySelector("#container");
 
 const render = async () => {
-    const html = `
+  const html = `
         <h1>Solar System Mining Marketplace</h1>
 
         <article class="drop-downs">
@@ -17,8 +16,8 @@ const render = async () => {
         <article class="spaceCart">
             <h2>Space Cart</h2>
         </article>
-    `
-    container.innerHTML = html
-}
+    `;
+  container.innerHTML = html;
+};
 
-render()
+render();
