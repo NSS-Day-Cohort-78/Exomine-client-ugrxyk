@@ -1,5 +1,6 @@
-import { governorDropDown } from "./GovernorSelector.js";
+import { governorDropDown, facilityDropDown } from "./GovernorSelector.js";
 const governorDropDownHTML = await governorDropDown();
+const facilityDropDownHTML = await facilityDropDown();
 
 const container = document.querySelector("#container");
 
@@ -9,6 +10,7 @@ const render = () => {
 
         <article class="drop-downs">
             ${governorDropDownHTML}
+            ${facilityDropDownHTML}
         </article>
 
         <article class="facilityMineralsChoice">
