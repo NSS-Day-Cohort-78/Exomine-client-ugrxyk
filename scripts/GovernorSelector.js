@@ -3,15 +3,17 @@ import { setFacility, setGovernor } from "./TransientState.js";
 import { getFacilities } from "./service/FacilityService.js";
 
 const changeHandlerGovernor = (changeEvent) => {
-  if (changeEvent.target.value === "governor") {
-    const chosenOption = changeEvent.target.id;
+  if (changeEvent.target.name === "governor_selector") {
+    const selectedOption = changeEvent.target.selectedOptions[0];
+    const chosenOption = selectedOption.dataset.id;
     setGovernor(chosenOption);
   }
 };
 
 const changeHandlerFacility = (changeEvent) => {
-  if (changeEvent.target.value === "facility") {
-    const chosenOption = changeEvent.target.id;
+  if (changeEvent.target.name === "facility_selector") {
+    const selectedOption = changeEvent.target.selectedOptions[0];
+    const chosenOption = selectedOption.dataset.id;
     setFacility(chosenOption);
   }
 };
@@ -28,7 +30,7 @@ export const governorDropDown = async () => {
       <select id="governors" name="governor_selector">`;
 
   filteredGovernors.map((governor) => {
-    dropDownHTML += `<option data-id=${governor.id} data-colonyId="${governor.colony.id}" value="governor">${governor.name}</option>`;
+    dropDownHTML += `<option data-id="${governor.id}" data-colonyId="${governor.colony.id}" value="governor">${governor.name}</option>`;
   });
 
   dropDownHTML += `</select>`;
@@ -47,7 +49,7 @@ export const facilityDropDown = async () => {
       <select id="facilities" name="facility_selector">`;
 
   filteredFacilities.map((facility) => {
-    dropDownHTML += `<option data-id=${facility.id} value="facility">${facility.name}</option>`;
+    dropDownHTML += `<option data-id="${facility.id}" value="facility">${facility.name}</option>`;
   });
 
   dropDownHTML += `</select>`;
