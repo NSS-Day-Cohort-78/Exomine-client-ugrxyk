@@ -6,16 +6,16 @@
         { "id": 4, "name": "Calcite" }
     ],
     "facilityMinerals": [
-        { "id": 1, "mineralId": 1, "miningFacilityId": 1 },
-        { "id": 2, "mineralId": 2, "miningFacilityId": 1 },
-        { "id": 3, "mineralId": 3, "miningFacilityId": 2 },
-        { "id": 4, "mineralId": 4, "miningFacilityId": 2 },
-        { "id": 5, "mineralId": 1, "miningFacilityId": 3 },
-        { "id": 6, "mineralId": 2, "miningFacilityId": 3 },
-        { "id": 7, "mineralId": 3, "miningFacilityId": 4 },
-        { "id": 8, "mineralId": 4, "miningFacilityId": 4 },
-        { "id": 9, "mineralId": 1, "miningFacilityId": 2 },
-        { "id": 10, "mineralId": 3, "miningFacilityId": 1 }
+        { "id": 1, "mineralId": 1, "miningFacilityId": 1, "quantity": 7 },
+        { "id": 2, "mineralId": 2, "miningFacilityId": 1, "quantity": 14 },
+        { "id": 3, "mineralId": 3, "miningFacilityId": 2, "quantity": 3 },
+        { "id": 4, "mineralId": 4, "miningFacilityId": 2, "quantity": 19 },
+        { "id": 5, "mineralId": 1, "miningFacilityId": 3, "quantity": 11 },
+        { "id": 6, "mineralId": 2, "miningFacilityId": 3, "quantity": 0 },
+        { "id": 7, "mineralId": 3, "miningFacilityId": 4, "quantity": 16 },
+        { "id": 8, "mineralId": 4, "miningFacilityId": 4, "quantity": 8 },
+        { "id": 9, "mineralId": 1, "miningFacilityId": 2, "quantity": 20 },
+        { "id": 10, "mineralId": 3, "miningFacilityId": 1, "quantity": 5 }
     ],
     "governors": [
         { "id": 1, "name": "William Bradford", "colonyId": 1, "status": true },
@@ -43,17 +43,17 @@
         { "id": 4, "name": "Copper Mountain Facility", "status": true }
     ],
     "colonyInventories" : [
-        { "id": 1, "colonyId": 1, "mineralId": 1 },
-        { "id": 2, "colonyId": 1, "mineralId": 3 },
-        { "id": 3, "colonyId": 2, "mineralId": 2 },
-        { "id": 4, "colonyId": 2, "mineralId": 4 },
-        { "id": 5, "colonyId": 3, "mineralId": 1 },
-        { "id": 6, "colonyId": 3, "mineralId": 2 },
-        { "id": 7, "colonyId": 3, "mineralId": 4 },
-        { "id": 8, "colonyId": 4, "mineralId": 3 },
-        { "id": 9, "colonyId": 4, "mineralId": 1 },
-        { "id": 10, "colonyId": 5, "mineralId": 2 },
-        { "id": 11, "colonyId": 5, "mineralId": 4 },
-        { "id": 12, "colonyId": 1, "mineralId": 2 }
+        { "id": 1, "colonyId": 1, "mineralId": 1, "quantity": 18},
+        { "id": 2, "colonyId": 1, "mineralId": 3, "quantity": 6},
+        { "id": 3, "colonyId": 2, "mineralId": 2, "quantity": 1},
+        { "id": 4, "colonyId": 2, "mineralId": 4, "quantity": 11},
+        { "id": 5, "colonyId": 3, "mineralId": 1, "quantity": 0},
+        { "id": 6, "colonyId": 3, "mineralId": 2, "quantity": 20},
+        { "id": 7, "colonyId": 3, "mineralId": 4, "quantity": 7},
+        { "id": 8, "colonyId": 4, "mineralId": 3, "quantity": 3},
+        { "id": 9, "colonyId": 4, "mineralId": 1, "quantity": 16},
+        { "id": 10, "colonyId": 5, "mineralId": 2, "quantity": 12},
+        { "id": 11, "colonyId": 5, "mineralId": 4, "quantity": 9},
+        { "id": 12, "colonyId": 1, "mineralId": 2, "quantity": 15}
     ]
 }
