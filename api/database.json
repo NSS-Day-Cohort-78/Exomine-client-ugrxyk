@@ -18,16 +18,16 @@
         { "id": 10, "mineralId": 3, "miningFacilityId": 1 }
     ],
     "governors": [
-        { "id": 1, "name": "William Bradford", "colonyId": 101, "status": true },
-        { "id": 2, "name": "John Winthrop", "colonyId": 102, "status": true },
-        { "id": 3, "name": "Peter Stuyvesant", "colonyId": 103, "status": false },
-        { "id": 4, "name": "Lord Baltimore", "colonyId": 104, "status": true },
-        { "id": 5, "name": "James Oglethorpe", "colonyId": 105, "status": false },
-        { "id": 6, "name": "William Penn", "colonyId": 106, "status": true },
-        { "id": 7, "name": "Thomas West", "colonyId": 107, "status": false },
-        { "id": 8, "name": "John Smith", "colonyId": 108, "status": true },
-        { "id": 9, "name": "Roger Williams", "colonyId": 109, "status": true },
-        { "id": 10, "name": "John Mason", "colonyId": 110, "status": false }
+        { "id": 1, "name": "William Bradford", "colonyId": 1, "status": true },
+        { "id": 2, "name": "John Winthrop", "colonyId": 2, "status": true },
+        { "id": 3, "name": "Peter Stuyvesant", "colonyId": 3, "status": false },
+        { "id": 4, "name": "Lord Baltimore", "colonyId": 4, "status": true },
+        { "id": 5, "name": "James Oglethorpe", "colonyId": 5, "status": false },
+        { "id": 6, "name": "William Penn", "colonyId": 6, "status": true },
+        { "id": 7, "name": "Thomas West", "colonyId": 7, "status": false },
+        { "id": 8, "name": "John Smith", "colonyId": 8, "status": true },
+        { "id": 9, "name": "Roger Williams", "colonyId": 9, "status": true },
+        { "id": 10, "name": "John Mason", "colonyId": 10, "status": false }
     ],
     "colonies": [
         { "id": 1, "name": "Luna Base Alpha" },
