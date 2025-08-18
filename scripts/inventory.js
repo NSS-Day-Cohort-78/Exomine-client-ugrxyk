@@ -4,7 +4,9 @@ export const colonyInventory = async (event) => {
 
     if (event.target.id === "governors") {
         for (const colonyInventory of inventory) {
-            if (colonyId === event.target.dataset.colonyId)
+            if (colonyId === event.dataset.colonyId) {
+                html += `<p>${}`
+            }
         }
     }
 
