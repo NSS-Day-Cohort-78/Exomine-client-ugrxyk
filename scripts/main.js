@@ -1,6 +1,8 @@
 import { governorDropDown, facilityDropDown } from "./GovernorSelector.js";
+import { colonyInventory } from "./inventory.js";
 const governorDropDownHTML = await governorDropDown();
 const facilityDropDownHTML = await facilityDropDown();
+const inventoryHTML = await colonyInventory();
 
 const container = document.querySelector("#container");
 
@@ -19,6 +21,13 @@ const render = () => {
             </article>
           </div>
 
+        <article class="colonyMineralsInventory">
+            ${inventoryHTML}
+        </article>
+
+        <article class="spaceCart">
+            <h2>Space Cart</h2>
+        </article>
           <div class="row">
             <article class="colonyMineralsInventory col">
             </article>

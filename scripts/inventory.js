@@ -2,15 +2,20 @@
 export const colonyInventory = async (event) => {
     const inventory = await fetch("http://localhost:8088/colonyInventories?_expand=mineral").then(res => res.json())
 
+    let html = ""
+
     if (event.target.id === "governors") {
         for (const colonyInventory of inventory) {
-            if (colonyId === event.dataset.colonyId) {
-                html += `<p>${}`
+            if (colonyInventory.colonyId === event.dataset.colonyId) {
+                html += `${colonyInventory.quantity} tons of ${colonyInventory.mineral.name}`
             }
         }
     }
 
+    return html
+
 }
+
 
 
 // if governor is selected
