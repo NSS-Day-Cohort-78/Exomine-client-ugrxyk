@@ -1,10 +1,14 @@
+import { governorDropDown } from "./GovernorSelector.js";
+const governorDropDownHTML = await governorDropDown();
+
 const container = document.querySelector("#container");
 
-const render = async () => {
+const render = () => {
   const html = `
         <h1>Solar System Mining Marketplace</h1>
 
         <article class="drop-downs">
+            ${governorDropDownHTML}
         </article>
 
         <article class="facilityMineralsChoice">
