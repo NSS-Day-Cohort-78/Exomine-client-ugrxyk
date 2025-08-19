@@ -7,7 +7,7 @@ export const getGovernors = async () => {
 };
 
 export const getColonyInventory = async () => {
-  return fetch(`http://localhost:8088/colonyInventory?_embed=colony`).then(
-    (res) => res.json()
-  );
+  return fetch(
+    `http://localhost:8088/colonyInventories?_expand=colony&_expand=mineral`
+  ).then((res) => res.json());
 };
