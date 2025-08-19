@@ -1,22 +1,43 @@
+// show inventory for each mineral for selected colony once governor is selected
+import { setInventory } from "./TransientState.js"
 
-export const colonyInventory = async (event) => {
-    const inventory = await fetch("http://localhost:8088/colonyInventories?_expand=mineral").then(res => res.json())
+
+
+// export const getColonyInventory = async () => {
+//     const inventory = await fetch("http://localhost:8088/colonyInventories?_expand=mineral").then(res => res.json())
+//     const colonyInventory = setInventory(inventory)
+//     return colonyInventory
+
+// }
+
+export const showColonyInventory = async (event) => {
+
+    const inventory = await getColonyInventory();
+
+    // const colonyId = parseInt(event.dataset.colonyId)
+
+    const governorState = setGovernor();
+
+    // document.addEventListener("click", setGovernor)
 
     let html = ""
 
-    // if (event.target.id === "governors") {
         for (const colonyInventory of inventory) {
-            if (parseInt(event.dataset.colonyId) === colonyInventory.colonyId) {
-                html += `${colonyInventory.quantity} tons of ${colonyInventory.mineral.name}`
+            if (governorState.value != 0) {
+                html += `<p>${colonyInventory.quantity} tons of ${colonyInventory.mineral.name}</p>`
             }
         }
-    // }
 
     return html
-
 }
 
-// if governor is selected
-    // loop colonyInventories[]
-        // if array colonyId === governor.colonyId...
-            // add to HTML string: [x] tons of [mineral]
+export const initializeColonyInventory = () => {
+   const govDropdown = document.querySelector("#governors")
+
+   if(govDropdown) {
+    govDropdown.addEventListener("change", (event) => {
+        // setGovernor(event);
+        showColonyInventory(event)
+    })
+   }
+}

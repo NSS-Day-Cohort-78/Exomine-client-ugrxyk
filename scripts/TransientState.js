@@ -15,6 +15,21 @@ export const setGovernor = (governorId) => {
   console.log(state);
 };
 
+export const setInventory = (inventory) => {
+  if (state.selectedGovernor != 0) {
+    let html = ""
+    if ()
+      for (const colonyInventory of inventory) {
+              html += `<p>${colonyInventory.quantity} tons of ${colonyInventory.mineral.name}</p>`
+          
+      }
+
+    return html
+  }
+
+  document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
 export const purchaseMineral = () => {
   /*
         Does the chosen governor's colony already own some of this mineral?
