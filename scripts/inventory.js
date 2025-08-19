@@ -1,6 +1,6 @@
 // show inventory for each mineral for selected colony once governor is selected
 import { setInventory } from "./TransientState.js"
-
+import { getGovernors } from "./service/GovernorService.js"
 
 
 // export const getColonyInventory = async () => {
@@ -10,22 +10,25 @@ import { setInventory } from "./TransientState.js"
 
 // }
 
-export const showColonyInventory = async (event) => {
+document.addEventListener("stateChanged", showColonyInventory)
 
-    const inventory = await getColonyInventory();
 
-    // const colonyId = parseInt(event.dataset.colonyId)
-
-    const governorState = setGovernor();
-
-    // document.addEventListener("click", setGovernor)
+export const showColonyInventory = async (state) => {
+    const governors = await getGovernors()
+    let html = ""
+    
+    for (const governor of governors) {
+        if (state.selectedGovernor === governor.id) {
+            //HTML text
+        }
+    }
 
     let html = ""
 
         for (const colonyInventory of inventory) {
-            if (governorState.value != 0) {
+            // if (governorState.value != 0) {
                 html += `<p>${colonyInventory.quantity} tons of ${colonyInventory.mineral.name}</p>`
-            }
+            // }
         }
 
     return html
@@ -41,3 +44,11 @@ export const initializeColonyInventory = () => {
     })
    }
 }
+
+
+
+
+// Listen for event "stateChanged"
+// When event listener is triggered, create new inventoryHTML based off of the updated state
+//              (getGovernor embeds the appropriate colony)
+// The function that generates the HTML should take in a parameter related to the current state (state.selectedGovernor)
