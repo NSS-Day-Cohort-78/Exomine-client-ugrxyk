@@ -7,7 +7,6 @@ const render = async () => {
     const governorDropDownHTML = await governorDropDown();
     const facilityDropDownHTML = await facilityDropDown();
     const colonyInventoryHTML = await showColonyInventory();
-
   const html = `
         <h1>Solar System Mining Marketplace</h1>
 
@@ -17,13 +16,15 @@ const render = async () => {
               ${governorDropDownHTML}
               ${facilityDropDownHTML}
             </article>
+
             <article class="col colonyMineralsInventory" id="colony-inventory-section">
             ${colonyInventoryHTML}
             </article>
           </div>
 
           <div class="row">
-            <article class=" col" >
+            <article class="colonyMineralsInventory col">
+
             </article>
             
             <article class="spaceCart col">
