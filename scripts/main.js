@@ -1,4 +1,6 @@
-import { governorDropDown, facilityDropDown } from "./GovernorSelector.js";
+import { governorDropDown } from "./GovernorSelector.js";
+import { facilityDropDown } from "./service/FacilityDropDown.js";
+
 const governorDropDownHTML = await governorDropDown();
 const facilityDropDownHTML = await facilityDropDown();
 
