@@ -8,13 +8,13 @@ export const showColonyInventory = async () => {
     const governors = await getGovernors()
     const colonyInventory = await getColonyInventory()
     let governorSelected = ""
-    let html = ""
+    let html = "<h2>Colony Minerals</h2>"
 
     // document.addEventListener("stateChanged", governorDropDown)
     
     for (const governor of governors) {
         if (state.selectedGovernor === governor.id) {
-            html += `<h2>${governor.colony.name}</h2>`
+            html = `<h2>${governor.colony.name} Minerals</h2>`
             governorSelected = governor
         }
     }
