@@ -1,4 +1,4 @@
-import { setFacility } from "../TransientState.js";
+import { setFacility } from "./TransientState.js";
 import { getFacilities } from "./service/FacilityService.js";
 
 const changeHandlerFacility = (changeEvent) => {
