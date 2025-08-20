@@ -1,12 +1,13 @@
-import { governorDropDown, facilityDropDown } from "./GovernorSelector.js";
+import { governorDropDown } from "./GovernorSelector.js";
+import { facilityDropDown } from "./FacilityDropDown.js";
 import { showColonyInventory } from "./inventory.js";
 
 const container = document.querySelector("#container");
 
 const render = async () => {
-    const governorDropDownHTML = await governorDropDown();
-    const facilityDropDownHTML = await facilityDropDown();
-    const colonyInventoryHTML = await showColonyInventory();
+  const governorDropDownHTML = await governorDropDown();
+  const facilityDropDownHTML = await facilityDropDown();
+  const colonyInventoryHTML = await showColonyInventory();
   const html = `
         <h1>Solar System Mining Marketplace</h1>
 
@@ -37,13 +38,15 @@ const render = async () => {
 };
 
 const inventoryRender = async () => {
-  const inventorySelection = document.querySelector("#colony-inventory-section")
+  const inventorySelection = document.querySelector(
+    "#colony-inventory-section"
+  );
   const colonyInventoryHTML = await showColonyInventory();
 
   const html = `${colonyInventoryHTML}`;
   inventorySelection.innerHTML = html;
-}
+};
 
-document.addEventListener("stateChanged", inventoryRender)
+document.addEventListener("stateChanged", inventoryRender);
 
 render();
