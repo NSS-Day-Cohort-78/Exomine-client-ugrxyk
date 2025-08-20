@@ -5,7 +5,7 @@ import {
 } from "./service/FacilityService.js";
 import { getMinerals } from "./service/MineralService.js";
 
-const state = {
+export const state = {
   selectedFacility: 0,
   selectedGovernor: 0,
   selectedMineral: 0,

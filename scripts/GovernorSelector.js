@@ -4,7 +4,8 @@ import { setGovernor } from "./TransientState.js";
 const changeHandlerGovernor = (changeEvent) => {
   if (changeEvent.target.name === "governor_selector") {
     const selectedOption = changeEvent.target.selectedOptions[0];
-    const chosenOption = selectedOption.dataset.id;
+    const chosenOption = parseInt(selectedOption.dataset.id);
+
     setGovernor(chosenOption);
   }
 };
