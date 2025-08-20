@@ -5,7 +5,7 @@ import { getFacilities } from "./service/FacilityService.js";
 const changeHandlerGovernor = (changeEvent) => {
   if (changeEvent.target.name === "governor_selector") {
     const selectedOption = changeEvent.target.selectedOptions[0];
-    const chosenOption = selectedOption.dataset.id;
+    const chosenOption = parseInt(selectedOption.dataset.id);
     setGovernor(chosenOption);
   }
 };
@@ -13,7 +13,7 @@ const changeHandlerGovernor = (changeEvent) => {
 const changeHandlerFacility = (changeEvent) => {
   if (changeEvent.target.name === "facility_selector") {
     const selectedOption = changeEvent.target.selectedOptions[0];
-    const chosenOption = selectedOption.dataset.id;
+    const chosenOption = parseInt(selectedOption.dataset.id);
     setFacility(chosenOption);
   }
 };

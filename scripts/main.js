@@ -1,12 +1,13 @@
 import { governorDropDown, facilityDropDown } from "./GovernorSelector.js";
-import { getColonyInventory } from "./inventory.js";
-const governorDropDownHTML = await governorDropDown();
-const facilityDropDownHTML = await facilityDropDown();
-const colonyInventoryHTML = await getColonyInventory();
+import { showColonyInventory } from "./inventory.js";
 
 const container = document.querySelector("#container");
 
-const render = () => {
+const render = async () => {
+    const governorDropDownHTML = await governorDropDown();
+    const facilityDropDownHTML = await facilityDropDown();
+    const colonyInventoryHTML = await showColonyInventory();
+
   const html = `
         <h1>Solar System Mining Marketplace</h1>
 
@@ -16,20 +17,13 @@ const render = () => {
               ${governorDropDownHTML}
               ${facilityDropDownHTML}
             </article>
-
-            <article class="col colonyInventory">
+            <article class="col colonyMineralsInventory" id="colony-inventory-section">
+            ${colonyInventoryHTML}
             </article>
           </div>
 
-        <article class="colonyMineralsInventory">
-        ${colonyInventoryHTML}
-        </article>
-
-        <article class="spaceCart">
-            <h2>Space Cart</h2>
-        </article>
           <div class="row">
-            <article class="colonyMineralsInventory col">
+            <article class=" col" >
             </article>
             
             <article class="spaceCart col">
@@ -40,5 +34,15 @@ const render = () => {
     `;
   container.innerHTML = html;
 };
+
+const inventoryRender = async () => {
+  const inventorySelection = document.querySelector("#colony-inventory-section")
+  const colonyInventoryHTML = await showColonyInventory();
+
+  const html = `${colonyInventoryHTML}`;
+  inventorySelection.innerHTML = html;
+}
+
+document.addEventListener("stateChanged", inventoryRender)
 
 render();

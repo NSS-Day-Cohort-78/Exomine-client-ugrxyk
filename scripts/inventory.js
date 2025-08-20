@@ -1,51 +1,33 @@
 // show inventory for each mineral for selected colony once governor is selected
-import { setInventory } from "./TransientState.js"
 import { getGovernors } from "./service/GovernorService.js"
+import { getColonyInventory } from "./service/GovernorService.js"
+import { state } from "./TransientState.js"
+import { governorDropDown } from "./GovernorSelector.js"
 
-
-// export const getColonyInventory = async () => {
-//     const inventory = await fetch("http://localhost:8088/colonyInventories?_expand=mineral").then(res => res.json())
-//     const colonyInventory = setInventory(inventory)
-//     return colonyInventory
-
-// }
-
-document.addEventListener("stateChanged", showColonyInventory)
-
-
-export const showColonyInventory = async (state) => {
+export const showColonyInventory = async () => {
     const governors = await getGovernors()
+    const colonyInventory = await getColonyInventory()
+    let governorSelected = ""
     let html = ""
+
+    // document.addEventListener("stateChanged", governorDropDown)
     
     for (const governor of governors) {
         if (state.selectedGovernor === governor.id) {
-            //HTML text
+            html += `<h2>${governor.colony.name}</h2>`
+            governorSelected = governor
         }
     }
 
-    let html = ""
 
-        for (const colonyInventory of inventory) {
-            // if (governorState.value != 0) {
-                html += `<p>${colonyInventory.quantity} tons of ${colonyInventory.mineral.name}</p>`
-            // }
+    for (const inventory of colonyInventory) {
+        if (governorSelected.colonyId === inventory.colonyId) {
+            html += `<p>${inventory.quantity} tons of ${inventory.mineral.name}</p>`
+        }
         }
 
     return html
 }
-
-export const initializeColonyInventory = () => {
-   const govDropdown = document.querySelector("#governors")
-
-   if(govDropdown) {
-    govDropdown.addEventListener("change", (event) => {
-        // setGovernor(event);
-        showColonyInventory(event)
-    })
-   }
-}
-
-
 
 
 // Listen for event "stateChanged"
