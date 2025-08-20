@@ -13,7 +13,7 @@ export const state = {
 
 export const setFacility = (facilityId) => {
   state.selectedFacility = facilityId;
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  document.dispatchEvent(new CustomEvent("facilityStateChanged"));
   console.log(state);
 };
 

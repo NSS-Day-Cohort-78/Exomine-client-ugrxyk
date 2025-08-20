@@ -1,6 +1,7 @@
 import { governorDropDown } from "./GovernorSelector.js";
 import { facilityDropDown } from "./FacilityDropDown.js";
 import { showColonyInventory } from "./inventory.js";
+import { GetMineralSelection } from "./mineralSelection.js";
 
 const container = document.querySelector("#container");
 
@@ -24,8 +25,7 @@ const render = async () => {
           </div>
 
           <div class="row">
-            <article class="colonyMineralsInventory col border text-center">
-              Facility inventory and buttons go here
+            <article class="colonyMineralsInventory col border text-center" id="facility-inventory-selection">
             </article>
             
             <article class="spaceCart col border">
@@ -48,6 +48,17 @@ const inventoryRender = async () => {
   inventorySelection.innerHTML = html;
 };
 
+const mineralSelectionRender = async () => {
+  const inventorySelection = document.querySelector(
+    "#facility-inventory-selection"
+  );
+  const facilityInventoryHTML = await GetMineralSelection();
+
+  const html = `${facilityInventoryHTML}`;
+  inventorySelection.innerHTML = html;
+};
+
 document.addEventListener("stateChanged", inventoryRender);
+document.addEventListener("facilityStateChanged", mineralSelectionRender);
 
 render();
