@@ -14,22 +14,23 @@ const render = async () => {
         <div class="container-fluid">
           <div class="row">
             <article class="col dropdown">
-              ${governorDropDownHTML}
-              ${facilityDropDownHTML}
+              <div class="m-3">${governorDropDownHTML}</div>
+              <div class="m-3">${facilityDropDownHTML}</div>
             </article>
 
             <article class="col colonyMineralsInventory" id="colony-inventory-section">
-            ${colonyInventoryHTML}
+            <div class="m-3">${colonyInventoryHTML}</div>
             </article>
           </div>
 
           <div class="row">
-            <article class="colonyMineralsInventory col">
-
+            <article class="colonyMineralsInventory col border text-center">
+              Facility inventory and buttons go here
             </article>
             
-            <article class="spaceCart col">
-              <h2>Space Cart</h2>
+            <article class="spaceCart col border">
+              <h2 class="text-center">Space Cart</h2>
+              <div class="border text-center">Button Goes here</div>
             </article>
           </div>
         </div>
