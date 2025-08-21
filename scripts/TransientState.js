@@ -62,18 +62,21 @@ export const purchaseMineral = async () => {
   for (const governor of governors) {
     if (state.selectedGovernor === governor.id) {
       purchasingGovernor = governor;
+      break;
     }
   }
 
   for (const facility of facilities) {
     if (state.selectedFacility === facility.id) {
       sellingFacility = facility;
+      break;
     }
   }
 
   for (const mineral of minerals) {
     if (state.selectedMineral === mineral.id) {
       transactionMineral = mineral;
+      break;
     }
   }
 
@@ -88,6 +91,8 @@ export const purchaseMineral = async () => {
       colonyInventoryJunction = inventory;
       colonyInventoryJunction.quantity++;
       foundColonyInventory = true;
+      delete colonyInventoryJunction.colony;
+      delete colonyInventoryJunction.mineral;
       break;
     }
   }
@@ -96,8 +101,8 @@ export const purchaseMineral = async () => {
 
   if (!foundColonyInventory) {
     newInventory = {
-      colonyId: `${purchasingGovernor.colony.id}`,
-      mineralId: `${transactionMineral.id}`,
+      colonyId: purchasingGovernor.colony.id,
+      mineralId: transactionMineral.id,
       quantity: 1,
     };
     postOptions = {
@@ -142,9 +147,6 @@ export const purchaseMineral = async () => {
     `http://localhost:8088/facilityMinerals/${facilityInventoryJunction.id.toString()}`,
     facilityInventoryPutOptions
   );
-
   state.selectedMineral = 0
-  
-
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  document.dispatchEvent(new CustomEvent("purchaseMade"));
 };

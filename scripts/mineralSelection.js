@@ -3,12 +3,11 @@ import { getFacilities } from "./service/FacilityService.js";
 import { state } from "./TransientState.js";
 import { setMineral } from "./TransientState.js";
 
-const minerals = await getMinerals();
-const facilities = await getFacilities();
-
 window.setMineral = setMineral;
 
 export const GetMineralSelection = async () => {
+  const minerals = await getMinerals();
+  const facilities = await getFacilities();
   //find Selected facility
   const selectedFacility = facilities.find(
     (facility) => facility.id === state.selectedFacility

@@ -72,5 +72,8 @@ document.addEventListener("stateChanged", inventoryRender);
 document.addEventListener("facilityStateChanged", mineralSelectionRender);
 document.addEventListener("mineralStateChanged", cartRender)
 document.addEventListener("facilityStateChanged", cartRender)
+document.addEventListener("purchaseMade", cartRender)
+document.addEventListener("purchaseMade", inventoryRender);
+document.addEventListener("purchaseMade", mineralSelectionRender);
 
 render();
