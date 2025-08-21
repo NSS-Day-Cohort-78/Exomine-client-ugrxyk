@@ -81,7 +81,7 @@ export const purchaseMineral = async () => {
 
   for (const inventory of colonyInventory) {
     if (
-      purchasingGovernor.colony[0].id === inventory.colonyId &&
+      purchasingGovernor.colony.id === inventory.colonyId &&
       transactionMineral.id === inventory.mineralId
     ) {
       colonyInventoryJunction = inventory;
@@ -95,8 +95,8 @@ export const purchaseMineral = async () => {
 
   if (!foundColonyInventory) {
     newInventory = {
-      colonyId: purchasingGovernor.colony[0].id,
-      mineralId: transactionMineral.id,
+      colonyId: `${purchasingGovernor.colony.id}`,
+      mineralId: `${transactionMineral.id}`,
       quantity: 1,
     };
     postOptions = {
@@ -131,14 +131,14 @@ export const purchaseMineral = async () => {
 
   if (foundColonyInventory === true) {
     await fetch(
-      `https://localhost:8088/colonyInventories/${colonyInventoryJunction.id}`,
+      `http://localhost:8088/colonyInventories/${colonyInventoryJunction.id.toString()}`,
       colonyInventoryPutOptions
     );
   } else {
-    await fetch(`https://localhost:8088/colonyInventories/`, postOptions);
+    await fetch(`http://localhost:8088/colonyInventories`, postOptions);
   }
   await fetch(
-    `https://localhost:8088/facilityMinerals/${facilityInventoryJunction.id}`,
+    `http://localhost:8088/facilityMinerals/${facilityInventoryJunction.id.toString()}`,
     facilityInventoryPutOptions
   );
 
