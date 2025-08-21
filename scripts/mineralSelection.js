@@ -69,11 +69,12 @@ export const GetMineralSelection = async () => {
 // when mineral is selected, render mineral selection in space cart
 // iterate minerals and match mineral id with state mineral id
 export const mineralSelectionCart = async () => {
-  let html = ""
-    for (const mineral of minerals) {
-      if (state.selectedMineral === mineral.id) {
-        html += `<p>1 ton of ${mineral.name}</p>`
-      } 
+  const minerals = await getMinerals();
+  let html = "";
+  for (const mineral of minerals) {
+    if (state.selectedMineral === mineral.id) {
+      html += `<p>1 ton of ${mineral.name}</p>`;
     }
-    return html
-}
+  }
+  return html;
+};

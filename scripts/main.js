@@ -1,7 +1,10 @@
 import { governorDropDown } from "./GovernorSelector.js";
 import { facilityDropDown } from "./FacilityDropDown.js";
 import { showColonyInventory } from "./inventory.js";
-import { GetMineralSelection, mineralSelectionCart } from "./mineralSelection.js";
+import {
+  GetMineralSelection,
+  mineralSelectionCart,
+} from "./mineralSelection.js";
 import { purchaseButton } from "./spaceCart.js";
 
 const container = document.querySelector("#container");
@@ -62,17 +65,17 @@ const mineralSelectionRender = async () => {
 };
 
 const cartRender = async () => {
-    const mineralSelection = document.querySelector(".mineral-selection-cart");
-    const cartHTML = await mineralSelectionCart()
-    const html = `${cartHTML}`;
-    mineralSelection.innerHTML = html;
-}
+  const mineralSelection = document.querySelector(".mineral-selection-cart");
+  const cartHTML = await mineralSelectionCart();
+  const html = `${cartHTML}`;
+  mineralSelection.innerHTML = html;
+};
 
 document.addEventListener("stateChanged", inventoryRender);
+document.addEventListener("mineralStateChanged", cartRender);
 document.addEventListener("facilityStateChanged", mineralSelectionRender);
-document.addEventListener("mineralStateChanged", cartRender)
-document.addEventListener("facilityStateChanged", cartRender)
-document.addEventListener("purchaseMade", cartRender)
+document.addEventListener("facilityStateChanged", cartRender);
+document.addEventListener("purchaseMade", cartRender);
 document.addEventListener("purchaseMade", inventoryRender);
 document.addEventListener("purchaseMade", mineralSelectionRender);
 
