@@ -1,7 +1,7 @@
 import { governorDropDown } from "./GovernorSelector.js";
 import { facilityDropDown } from "./FacilityDropDown.js";
 import { showColonyInventory } from "./inventory.js";
-import { GetMineralSelection } from "./mineralSelection.js";
+import { GetMineralSelection, mineralSelectionCart } from "./mineralSelection.js";
 import { purchaseButton } from "./spaceCart.js";
 
 const container = document.querySelector("#container");
@@ -32,6 +32,7 @@ const render = async () => {
             
             <article class="spaceCart col border">
               <h2 class="text-center">Space Cart</h2>
+              <div class="mineral-selection-cart"></div>
               <div class="border text-center">${purchaseButtonHTML}</div>
             </article>
           </div>
@@ -60,7 +61,16 @@ const mineralSelectionRender = async () => {
   inventorySelection.innerHTML = html;
 };
 
+const cartRender = async () => {
+    const mineralSelection = document.querySelector(".mineral-selection-cart");
+    const cartHTML = await mineralSelectionCart()
+    const html = `${cartHTML}`;
+    mineralSelection.innerHTML = html;
+}
+
 document.addEventListener("stateChanged", inventoryRender);
 document.addEventListener("facilityStateChanged", mineralSelectionRender);
+document.addEventListener("mineralStateChanged", cartRender)
+document.addEventListener("facilityStateChanged", cartRender)
 
 render();
