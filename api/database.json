@@ -1,59 +1,268 @@
 {
-    "minerals":[
-        { "id": 1, "name": "Quartz" },
-        { "id": 2, "name": "Feldspar" },
-        { "id": 3, "name": "Mica" },
-        { "id": 4, "name": "Calcite" }
-    ],
-    "facilityMinerals": [
-        { "id": 1, "mineralId": 1, "miningFacilityId": 1, "quantity": 7 },
-        { "id": 2, "mineralId": 2, "miningFacilityId": 1, "quantity": 14 },
-        { "id": 3, "mineralId": 3, "miningFacilityId": 2, "quantity": 3 },
-        { "id": 4, "mineralId": 4, "miningFacilityId": 2, "quantity": 19 },
-        { "id": 5, "mineralId": 1, "miningFacilityId": 3, "quantity": 11 },
-        { "id": 6, "mineralId": 2, "miningFacilityId": 3, "quantity": 0 },
-        { "id": 7, "mineralId": 3, "miningFacilityId": 4, "quantity": 16 },
-        { "id": 8, "mineralId": 4, "miningFacilityId": 4, "quantity": 8 },
-        { "id": 9, "mineralId": 1, "miningFacilityId": 2, "quantity": 20 },
-        { "id": 10, "mineralId": 3, "miningFacilityId": 1, "quantity": 5 }
-    ],
-    "governors": [
-        { "id": 1, "name": "William Bradford", "colonyId": 1, "status": true },
-        { "id": 2, "name": "John Winthrop", "colonyId": 4, "status": true },
-        { "id": 3, "name": "Peter Stuyvesant", "colonyId": 3, "status": false },
-        { "id": 4, "name": "Lord Baltimore", "colonyId": 4, "status": true },
-        { "id": 5, "name": "James Oglethorpe", "colonyId": 5, "status": false },
-        { "id": 6, "name": "William Penn", "colonyId": 2, "status": true },
-        { "id": 7, "name": "Thomas West", "colonyId": 1, "status": false },
-        { "id": 8, "name": "John Smith", "colonyId": 1, "status": true },
-        { "id": 9, "name": "Roger Williams", "colonyId": 3, "status": true },
-        { "id": 10, "name": "John Mason", "colonyId": 5, "status": true }
-    ],
-    "colonies": [
-        { "id": 1, "name": "Luna Base Alpha" },
-        { "id": 2, "name": "Mars Colony One" },
-        { "id": 3, "name": "Europa Research Station" },
-        { "id": 4, "name": "Titan Mining Outpost" },
-        { "id": 5, "name": "Ceres Industrial Hub" }
-    ],
-    "miningFacilities" : [
-        { "id": 1, "name": "Iron Ridge Mine", "status": true },
-        { "id": 2, "name": "Golden Valley Quarry", "status": false },
-        { "id": 3, "name": "Silver Creek Mining Station", "status": true },
-        { "id": 4, "name": "Copper Mountain Facility", "status": true }
-    ],
-    "colonyInventories" : [
-        { "id": 1, "colonyId": 1, "mineralId": 1, "quantity": 18},
-        { "id": 2, "colonyId": 1, "mineralId": 3, "quantity": 6},
-        { "id": 3, "colonyId": 2, "mineralId": 2, "quantity": 1},
-        { "id": 4, "colonyId": 2, "mineralId": 4, "quantity": 11},
-        { "id": 5, "colonyId": 3, "mineralId": 1, "quantity": 0},
-        { "id": 6, "colonyId": 3, "mineralId": 2, "quantity": 20},
-        { "id": 7, "colonyId": 3, "mineralId": 4, "quantity": 7},
-        { "id": 8, "colonyId": 4, "mineralId": 3, "quantity": 3},
-        { "id": 9, "colonyId": 4, "mineralId": 1, "quantity": 16},
-        { "id": 10, "colonyId": 5, "mineralId": 2, "quantity": 12},
-        { "id": 11, "colonyId": 5, "mineralId": 4, "quantity": 9},
-        { "id": 12, "colonyId": 1, "mineralId": 2, "quantity": 15}
-    ]
+  "minerals": [
+    {
+      "id": 1,
+      "name": "Quartz"
+    },
+    {
+      "id": 2,
+      "name": "Feldspar"
+    },
+    {
+      "id": 3,
+      "name": "Mica"
+    },
+    {
+      "id": 4,
+      "name": "Calcite"
+    }
+  ],
+  "facilityMinerals": [
+    {
+      "id": 1,
+      "mineralId": 1,
+      "miningFacilityId": 1,
+      "quantity": 6
+    },
+    {
+      "id": 2,
+      "mineralId": 2,
+      "miningFacilityId": 1,
+      "quantity": 9
+    },
+    {
+      "id": 3,
+      "mineralId": 3,
+      "miningFacilityId": 2,
+      "quantity": 3
+    },
+    {
+      "id": 4,
+      "mineralId": 4,
+      "miningFacilityId": 2,
+      "quantity": 19
+    },
+    {
+      "id": 5,
+      "mineralId": 1,
+      "miningFacilityId": 3,
+      "quantity": 15
+    },
+    {
+      "id": 6,
+      "mineralId": 2,
+      "miningFacilityId": 3,
+      "quantity": 0
+    },
+    {
+      "id": 7,
+      "mineralId": 3,
+      "miningFacilityId": 4,
+      "quantity": 14
+    },
+    {
+      "id": 8,
+      "mineralId": 4,
+      "miningFacilityId": 4,
+      "quantity": 5
+    },
+    {
+      "id": 9,
+      "mineralId": 1,
+      "miningFacilityId": 2,
+      "quantity": 20
+    },
+    {
+      "id": 10,
+      "mineralId": 3,
+      "miningFacilityId": 1,
+      "quantity": 5
+    }
+  ],
+  "governors": [
+    {
+      "id": 1,
+      "name": "William Bradford",
+      "colonyId": 1,
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "John Winthrop",
+      "colonyId": 4,
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Peter Stuyvesant",
+      "colonyId": 3,
+      "status": false
+    },
+    {
+      "id": 4,
+      "name": "Lord Baltimore",
+      "colonyId": 4,
+      "status": true
+    },
+    {
+      "id": 5,
+      "name": "James Oglethorpe",
+      "colonyId": 5,
+      "status": false
+    },
+    {
+      "id": 6,
+      "name": "William Penn",
+      "colonyId": 2,
+      "status": true
+    },
+    {
+      "id": 7,
+      "name": "Thomas West",
+      "colonyId": 1,
+      "status": false
+    },
+    {
+      "id": 8,
+      "name": "John Smith",
+      "colonyId": 1,
+      "status": true
+    },
+    {
+      "id": 9,
+      "name": "Roger Williams",
+      "colonyId": 3,
+      "status": true
+    },
+    {
+      "id": 10,
+      "name": "John Mason",
+      "colonyId": 5,
+      "status": true
+    }
+  ],
+  "colonies": [
+    {
+      "id": 1,
+      "name": "Luna Base Alpha"
+    },
+    {
+      "id": 2,
+      "name": "Mars Colony One"
+    },
+    {
+      "id": 3,
+      "name": "Europa Research Station"
+    },
+    {
+      "id": 4,
+      "name": "Titan Mining Outpost"
+    },
+    {
+      "id": 5,
+      "name": "Ceres Industrial Hub"
+    }
+  ],
+  "miningFacilities": [
+    {
+      "id": 1,
+      "name": "Iron Ridge Mine",
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "Golden Valley Quarry",
+      "status": false
+    },
+    {
+      "id": 3,
+      "name": "Silver Creek Mining Station",
+      "status": true
+    },
+    {
+      "id": 4,
+      "name": "Copper Mountain Facility",
+      "status": true
+    }
+  ],
+  "colonyInventories": [
+    {
+      "id": 2,
+      "colonyId": 1,
+      "mineralId": 3,
+      "quantity": 6
+    },
+    {
+      "id": 3,
+      "colonyId": 2,
+      "mineralId": 2,
+      "quantity": 10
+    },
+    {
+      "id": 4,
+      "colonyId": 2,
+      "mineralId": 4,
+      "quantity": 11
+    },
+    {
+      "id": 5,
+      "colonyId": 3,
+      "mineralId": 1,
+      "quantity": 0
+    },
+    {
+      "id": 6,
+      "colonyId": 3,
+      "mineralId": 2,
+      "quantity": 20
+    },
+    {
+      "id": 7,
+      "colonyId": 3,
+      "mineralId": 4,
+      "quantity": 7
+    },
+    {
+      "id": 10,
+      "colonyId": 5,
+      "mineralId": 2,
+      "quantity": 12
+    },
+    {
+      "id": 11,
+      "colonyId": 5,
+      "mineralId": 4,
+      "quantity": 9
+    },
+    {
+      "id": 12,
+      "colonyId": 1,
+      "mineralId": 2,
+      "quantity": 15
+    },
+    {
+      "colonyId": 4,
+      "mineralId": 2,
+      "quantity": 20,
+      "id": 13
+    },
+    {
+      "colonyId": 4,
+      "mineralId": 1,
+      "quantity": 14,
+      "id": 14
+    },
+    {
+      "colonyId": 4,
+      "mineralId": 3,
+      "quantity": 1,
+      "id": 16
+    },
+    {
+      "colonyId": 4,
+      "mineralId": 4,
+      "quantity": 1,
+      "id": 17
+    }
+  ]
 }
