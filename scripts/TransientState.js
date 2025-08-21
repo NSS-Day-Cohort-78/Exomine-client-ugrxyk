@@ -13,6 +13,7 @@ export const state = {
 
 export const setFacility = (facilityId) => {
   state.selectedFacility = facilityId;
+  state.selectedMineral = 0;
   document.dispatchEvent(new CustomEvent("facilityStateChanged"));
   console.log(state);
 };
@@ -25,7 +26,7 @@ export const setGovernor = (governorId) => {
 
 export const setMineral = (mineralId) => {
   state.selectedMineral = mineralId;
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  document.dispatchEvent(new CustomEvent("mineralStateChanged"));
   console.log(state);
 };
 
@@ -146,6 +147,6 @@ export const purchaseMineral = async () => {
     `http://localhost:8088/facilityMinerals/${facilityInventoryJunction.id.toString()}`,
     facilityInventoryPutOptions
   );
-
+  state.selectedMineral = 0
   document.dispatchEvent(new CustomEvent("purchaseMade"));
 };

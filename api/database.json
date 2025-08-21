@@ -64,7 +64,7 @@
       "id": 8,
       "mineralId": 4,
       "miningFacilityId": 4,
-      "quantity": 7
+      "quantity": 6
     },
     {
       "id": 9,
@@ -251,6 +251,12 @@
       "mineralId": 1,
       "quantity": 13,
       "id": 14
+    },
+    {
+      "colonyId": "4",
+      "mineralId": "4",
+      "quantity": 1,
+      "id": 15
     }
   ]
 }
