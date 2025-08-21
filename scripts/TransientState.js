@@ -95,8 +95,8 @@ export const purchaseMineral = async () => {
 
   if (!foundColonyInventory) {
     newInventory = {
-      colonyId: `${purchasingGovernor.colony.id}`,
-      mineralId: `${transactionMineral.id}`,
+      colonyId: purchasingGovernor.colony.id,
+      mineralId: transactionMineral.id,
       quantity: 1,
     };
     postOptions = {
