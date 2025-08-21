@@ -61,18 +61,21 @@ export const purchaseMineral = async () => {
   for (const governor of governors) {
     if (state.selectedGovernor === governor.id) {
       purchasingGovernor = governor;
+      break;
     }
   }
 
   for (const facility of facilities) {
     if (state.selectedFacility === facility.id) {
       sellingFacility = facility;
+      break;
     }
   }
 
   for (const mineral of minerals) {
     if (state.selectedMineral === mineral.id) {
       transactionMineral = mineral;
+      break;
     }
   }
 
@@ -87,6 +90,8 @@ export const purchaseMineral = async () => {
       colonyInventoryJunction = inventory;
       colonyInventoryJunction.quantity++;
       foundColonyInventory = true;
+      delete colonyInventoryJunction.colony;
+      delete colonyInventoryJunction.mineral;
       break;
     }
   }
