@@ -142,5 +142,5 @@ export const purchaseMineral = async () => {
     facilityInventoryPutOptions
   );
 
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  document.dispatchEvent(new CustomEvent("purchaseMade"));
 };

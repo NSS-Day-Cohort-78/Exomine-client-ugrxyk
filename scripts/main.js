@@ -62,5 +62,7 @@ const mineralSelectionRender = async () => {
 
 document.addEventListener("stateChanged", inventoryRender);
 document.addEventListener("facilityStateChanged", mineralSelectionRender);
+document.addEventListener("purchaseMade", inventoryRender);
+document.addEventListener("purchaseMade", mineralSelectionRender);
 
 render();

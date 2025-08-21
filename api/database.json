@@ -46,7 +46,7 @@
       "id": 5,
       "mineralId": 1,
       "miningFacilityId": 3,
-      "quantity": 11
+      "quantity": 7
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "id": 7,
       "mineralId": 3,
       "miningFacilityId": 4,
-      "quantity": 16
+      "quantity": 15
     },
     {
       "id": 8,
@@ -232,13 +232,29 @@
       "id": 8,
       "colonyId": 4,
       "mineralId": 3,
-      "quantity": 3
+      "quantity": 4,
+      "colony": {
+        "id": 4,
+        "name": "Titan Mining Outpost"
+      },
+      "mineral": {
+        "id": 3,
+        "name": "Mica"
+      }
     },
     {
       "id": 9,
       "colonyId": 4,
       "mineralId": 1,
-      "quantity": 16
+      "quantity": 20,
+      "colony": {
+        "id": 4,
+        "name": "Titan Mining Outpost"
+      },
+      "mineral": {
+        "id": 1,
+        "name": "Quartz"
+      }
     },
     {
       "id": 10,
