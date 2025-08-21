@@ -39,11 +39,11 @@ export const GetMineralSelection = async () => {
           <div class= "mineral-option">
           <input type ="radio"
                   name= "mineral"
-                  value="${mineral.id}"
-                  id= "mineral--${mineral.id}"
-                  onclick="setMineral(${mineral.id})"
+                  value="${mineral.mineralId}"
+                  id= "mineral--${mineral.mineralId}"
+                  onclick="setMineral(${mineral.mineralId})"
                   >
-              <label for= "mineral--${mineral.id}">
+              <label for= "mineral--${mineral.mineralId}">
                   ${mineral.mineralName} (${mineral.quantity} tons available)
               </label>
               </div>
