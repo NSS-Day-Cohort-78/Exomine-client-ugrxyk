@@ -46,7 +46,7 @@
       "id": 5,
       "mineralId": 1,
       "miningFacilityId": 3,
-      "quantity": 17
+      "quantity": 16
     },
     {
       "id": 6,
@@ -187,20 +187,6 @@
   ],
   "colonyInventories": [
     {
-      "id": 1,
-      "colonyId": 1,
-      "mineralId": 1,
-      "quantity": 19,
-      "colony": {
-        "id": 1,
-        "name": "Luna Base Alpha"
-      },
-      "mineral": {
-        "id": 1,
-        "name": "Quartz"
-      }
-    },
-    {
       "id": 2,
       "colonyId": 1,
       "mineralId": 3,
@@ -263,7 +249,7 @@
     {
       "colonyId": 4,
       "mineralId": 1,
-      "quantity": 12,
+      "quantity": 13,
       "id": 14
     }
   ]
